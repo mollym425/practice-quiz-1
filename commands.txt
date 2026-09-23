@@ -39,5 +39,17 @@ git stash
 cat project/docs/summary.txt
 git stash pop
 cat project/docs/summary.txt
-
-
+git add . && git commit -m "updates"
+git log --oneline
+git checkout -b station-note
+echo "This is a note" > project/docs/note.txt
+git add project/docs/note.txt && git commit -m "Add note"
+git checkout master
+git diff master..station-note
+git checkout station-note && git log --oneline
+git checkout master
+git cherry-pick 761dcf5
+find project/docs/note.txt
+git add .
+git commit -m "final updates"
+git push
