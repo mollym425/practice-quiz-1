@@ -9,4 +9,14 @@ cd project/scripts && touch clean.py analyse.py plot.py
 mv project/data/station01.csv project/data/baseline.csv
 mkdir project/backup && cp project/scripts/*.py project/backup
 cd project && ls -R
-
+cd .. && git add . && git commit -m "practice quiz part 1"
+echo "North station" > project/docs/stations.txt && echo "South station" >> project/docs/stations.txt && echo "North tower" >> project/docs/stations.txt && echo "East station" >> project/docs/stations.txt
+cat project/docs/stations.txt
+grep "station" project/docs/stations.txt -n
+grep "North" project/docs/stations.txt
+tail -2 project/docs/stations.txt
+wc -lw project/docs/stations.txt
+grep "station" project/docs/stations.txt | wc -l
+echo "temp/" > project/.gitignore
+mkdir project/tmp && touch project/tmp/temp.txt
+git status
