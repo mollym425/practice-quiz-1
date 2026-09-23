@@ -1,0 +1,12 @@
+git clone https://github.com/mollym425/practice-quiz-1.git
+cd practice-quiz-1 
+pwd
+git status
+touch commands.txt
+mkdir -p project/{data,scripts,docs}
+touch project/data/station0{1..5}.csv
+cd project/scripts && touch clean.py analyse.py plot.py
+mv project/data/station01.csv project/data/baseline.csv
+mkdir project/backup && cp project/scripts/*.py project/backup
+cd project && ls -R
+
