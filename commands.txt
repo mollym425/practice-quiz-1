@@ -20,3 +20,24 @@ grep "station" project/docs/stations.txt | wc -l
 echo "temp/" > project/.gitignore
 mkdir project/tmp && touch project/tmp/temp.txt
 git status
+git branch
+git checkout -b add-summary
+echo "Station review complete" > project/docs/summary.txt
+git add project/docs/summary.txt
+git commit -m "Add station summary"
+git checkout master
+find project/docs/summary.txt
+git merge add-summary
+find project/docs/summary.txt && cat project/docs/summary.txt
+git branch -d add-summary
+echo "Reviewed all 4 entries" >> project/docs/summary.txt
+git add project/docs/summary.txt
+git commit -m "Updat summary"
+git commit --amend -m "Update summary"
+echo "TODO: check station names" >> project/docs/summary.txt
+git stash
+cat project/docs/summary.txt
+git stash pop
+cat project/docs/summary.txt
+
+
